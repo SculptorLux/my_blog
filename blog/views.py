@@ -13,4 +13,8 @@ def main(request):
 
 
 def personal_post(request, name_post):
-    return HttpResponse(f'Информация о посте {name_post}')
+    return HttpResponse(f"Информация о посте {name_post}")
+
+
+def personal_post_number(request, number_post: int):
+    return HttpResponse(f"Здесь содержится информация о посте под номером {number_post}")
