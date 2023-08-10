@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
+from django.template.loader import render_to_string
 
 
 def posts_info(request):
@@ -9,7 +10,8 @@ def posts_info(request):
 
 
 def main(request):
-    return HttpResponse("Главная страница")
+    response = render_to_string('blog/index.html')
+    return HttpResponse(response)
 
 
 def personal_post(request, name_post):
