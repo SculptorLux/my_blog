@@ -15,8 +15,32 @@ def main(request):
 
 
 def personal_post(request, name_post):
-    return HttpResponse(f"Информация о посте {name_post}")
+    context = {
+        'name': name_post
+    }
+    return render(request, 'blog/detail_by_name.html', context)
 
 
 def personal_post_number(request, number_post: int):
-    return HttpResponse(f"Здесь содержится информация о посте под номером {number_post}")
+    context = {
+        'number': number_post,
+    }
+    return render(request, 'blog/detail_by_number.html', context)
+
+
+def keanu(request):
+    context = {
+        'year_born': '2 сентября 1964 г.',
+        'city_born': 'Бейрут',
+        'movie_name': 'Джон Уик',
+    }
+    return render(request, 'blog/keanu.html', context)
+
+
+def get_guinness_world_records(request):
+    context = {
+        'power_man': 'Narve Laeret',
+        'bar_name': 'Bob’s BBQ & Grill',
+        'count_needle': 1790,
+    }
+    return render(request, 'blog/guinnessworldrecords.html', context)
