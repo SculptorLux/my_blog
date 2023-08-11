@@ -23,4 +23,5 @@ urlpatterns = [
     path('', blog_views.main),
     path('admin/', admin.site.urls),
     path('posts/', include('blog.urls')),
+    path('beautiful_table/', include('table.urls'))
 ]
